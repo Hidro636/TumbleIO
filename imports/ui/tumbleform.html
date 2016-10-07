@@ -1,15 +1,64 @@
 <template name="tumbleForm">
-    <div class="container">
-        <div class="panel panel-primary">
-            <div class="panel-header">
-                Tumble to one address:
-            </div>
+    <div id="wrapper" style="text-align: center">
+        <div class="vertical-center container">
 
-            <div class="panel-content">
-                <form class="form-horizontal">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Tumble to one address:</h4>
+                </div>
 
-                </form>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="accessKeyTextBox" class="col-sm-2 control-label">Access Key:</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="accessKeyTextBox" placeholder="Key">
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="toAddressFormGroup">
+                            <label for="toAddressTextBox" class="col-sm-2 control-label">Destination
+                                Address:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="toAddressTextBox"
+                                       placeholder="************************"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="defaultTransactionFeeTextBox" class="col-sm-2 control-label">Default Transaction
+                                Fee:</label>
+                            <div class="col-sm-4">
+                                <input type="number" class="form-control" id="defaultTransactionFeeTextBox" min="0.0001"
+                                       step="0.0001"
+                                       placeholder="BTC" value="0.0001"/>
+                            </div>
+
+                            <label for="tumbleCountTextBox" class="col-sm-2 control-label">Tumbles:</label>
+                            <div class="col-sm-4">
+                                <input type="number" class="form-control" id="tumbleCountTextBox" min="5"
+                                       step="1"
+                                       placeholder="#" value="5"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estFeeTextBox" class="col-sm-2 control-label">Estimated Total Fee:</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="estFeeTextBox"
+                                       value="{{estFee}}" readonly/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="panel-footer">
+                    <button class="btn btn-success form-control" id="tumbleButton">Tumble <span
+                            class="glyphicon glyphicon-play"></span></button>
+                </div>
+
             </div>
         </div>
+
     </div>
 </template>
