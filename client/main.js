@@ -13,7 +13,19 @@ Meteor.startup(function () {
 });
 
 Template.modals.helpers({
-   minimumAmount() {
-       return Number(Session.get('totalFee')) + 0.0001;
-   }
+    minimumAmount() {
+        return Number(Session.get('totalFee')) + 0.0001;
+    }
+});
+
+Template.body.events({
+    'click #testButton'(event) {
+       Meteor.call('testGenerate', function(err, result) {
+           if(err) {
+               console.log(err.reason);
+           } else {
+               console.log(result);
+           }
+       })
+    }
 });
