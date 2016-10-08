@@ -4,5 +4,27 @@
 
 <body>
 {{> tumbleForm}}
+{{> modals}}
 </body>
 
+<template name="modals">
+    <div class="modal fade" id="confirmModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirm</h4>
+                </div>
+
+                <div class="modal-body">
+                    Are you sure you want to tumble? Ensure that you have at least <span style="color: red;">{{minimumAmount}} BTC</span> ready before you confirm!
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-danger pull-left" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-success pull-right" id="confirmButton">Tumble <span
+                            class="glyphicon glyphicon-circle-arrow-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
